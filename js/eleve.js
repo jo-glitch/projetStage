@@ -11,29 +11,33 @@ let firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 
+//  PARTIE ELEVE
 
+  $('#planning').css({
+    'display': 'none',
+})
+$('#addUserForm').css({
+    'display': 'none',
+})
 
-  $( "#btn2" ).click(function() {
+  $( "#formateur" ).click(function() {
     
-    $('#ins').css({
+    $('#addUserForm').css({
         'display': 'flex',
     })
-    $('#conect').css({
+    $('#planning').css({
         'display': 'none',
     })
   });
 
-  $("#inscrit").click(function(){
-      $('#conect').css({
+  $("#edt").click(function(){
+      $('#planning').css({
           'display':'flex'
       })
-      $('#ins').css({
-        'display':'none'
+      $('#addUserForm').css({
+        'display': 'none',
     })
   })
-
-
-  
   $('#addUserForm').on('submit', onAddUser);
 
 
@@ -50,3 +54,29 @@ function onAddUser (event) {
         presence
     });
 }
+
+// PARTIE FORMATEUR
+
+// POUR AFICHER LE NOM
+firebase.database().ref('/eleve').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const name = item.val()
+        content += `<li>${name.name}</li>`;
+    });
+  
+    $('#nom').html(content);
+  
+  });
+  // POUR AFICHER LE NOM
+  firebase.database().ref('/eleve').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const presence = item.val()
+        content += `<li>${presence.presence}</li>`;
+    });
+  
+    $('#presence').html(content);
+  });
