@@ -1,0 +1,24 @@
+.head{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+.head h2{
+    margin-left: 10px;
+}
+.head button{
+    margin-right: 10px;
+}
+.list_attribut{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.list{
+    display: flex;
+    justify-content: space-around;
+}
+.list ul li{
+    list-style-type: none;
+}

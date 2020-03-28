@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+    <title>Liste des élèves</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="head">
+        <h2>ÉLÈVES</h2>
+        <a href="./formulaire.html"><button type="submit" class="btn btn-primary">Ajouter</button></a>
+    </div>
+    <hr>
+    <div class="list_attribut">
+        <h6>Nom et prénom</h6>
+        <h6>Date de naissance</h6>
+        <h6>Téléphone</h6>
+        <h6>Études</h6>
+    </div>
+    <div class="list">
+        <ul id="name">
+            
+        </ul>
+        <ul id="date">
+           
+        </ul>
+        <ul id="tel">
+            
+        </ul>
+        <ul id="etudes">
+            
+        </ul>
+        <ul id="sexe">
+            
+        </ul>
+    </div>
+    <div class="head">
+        <h2>CLASSES</h2>
+        <a href="./formulaire.html"><button type="submit" class="btn btn-primary">Ajouter</button></a>
+    </div>
+    <hr>
+    <div class="list_attribut">
+        <h6>Salle</h6>
+        <h6>heur</h6>
+        <h6>formateur</h6>
+    </div>
+    <div class="list">
+        <ul id="salla">
+            
+        </ul>
+        <ul id="heur">
+           
+        </ul>
+        <ul id="formateur">
+            
+        </ul>
+        
+    </div>
+
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+    <script src="./js/student_list.js" type="module"></script>
+</body>
+</html>

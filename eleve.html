@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eleve</title>
+</head>
+<body>
+    <h1>eleve</h1>
+    <div id="bnttt">
+        <button type="submit1" class="btn btn-primary">Planning</button>
+        <button type="submit2" id="btn2" class="btn btn-primary">Prevenir le formateur</button>
+    </div>
+    <form  id="addUserForm">
+        <div class="form-group">
+          <h6>prénom</h6>
+          <input type="text" class="form-control" id="name">
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="presence" id="pres" value="retard">
+                <label class="form-check-label" for="pres">retard</label><br>
+                <input class="form-check-input" type="radio" name="presence" id="sexe" value="absent">
+                <label class="form-check-label" for="pres">absent</label>
+            </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Validez</button>
+
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+    <script src="./js/eleve.js"></script>
+
+</body>
+</html>
