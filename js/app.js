@@ -13,17 +13,19 @@ let firebaseConfig = {
 
 //  PARTIE ELEVE
 
+// le planning et la partie pour prevenir le formateur son par defaut en display none
   $('#planning').css({
     'display': 'none',
 })
 $('#addUserForm').css({
     'display': 'none',
 })
-
+// lorsqu'on clique sur les bouttons les parties s'affiche
   $( "#formateur" ).click(function() {
-    
     $('#addUserForm').css({
         'display': 'flex',
+        'justify-content': 'center',
+        'align-items': 'center'
     })
     $('#planning').css({
         'display': 'none',
@@ -31,8 +33,10 @@ $('#addUserForm').css({
   });
 
   $("#edt").click(function(){
-      $('#planning').css({
-          'display':'flex'
+     $('#planning').css({
+        'display':'flex',
+        'justify-content': 'center',
+        'align-items': 'center'
       })
       $('#addUserForm').css({
         'display': 'none',
@@ -45,19 +49,21 @@ function onAddUser (event) {
     event.preventDefault();
 
     const name = $('#name').val();
+    const classe = $('#classe').val();
     const presence = $("input[name='presence']:checked").val();
 
 
     // Ajouter  dans la database
     firebase.database().ref('eleve/').push({
         name,
-        presence
+        presence,
+        classe
     });
 }
 
 // PARTIE FORMATEUR
 
-// POUR AFICHER LE NOM
+// POUR AFFICHER LE NOM
 firebase.database().ref('/eleve').on('value', function (snapshot) {
 
     let content = '';
@@ -69,7 +75,7 @@ firebase.database().ref('/eleve').on('value', function (snapshot) {
     $('#nom').html(content);
   
   });
-  // POUR AFICHER LE NOM
+  // POUR AFFICHER SI L'ELEVE A PREVENU
   firebase.database().ref('/eleve').on('value', function (snapshot) {
 
     let content = '';
@@ -78,5 +84,21 @@ firebase.database().ref('/eleve').on('value', function (snapshot) {
         content += `<li>${presence.presence}</li>`;
     });
   
-    $('#presence').html(content);
+    $('#status').html(content);
   });
+
+  // POUR AFFICHER LA CLASSE 
+  firebase.database().ref('/eleve').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const classe = item.val()
+        content += `<li>${classe.classe}</li>`;
+    });
+  
+    $('#class').html(content);
+  });
+
+
+//   PARTIE ADMIN
+

@@ -11,23 +11,31 @@
 <body>
     <div class="head">
         <h2>FORMATEUR</h2>
+        <button type="submit3" class="btn btn-primary">Ajouter des élèves</button>
     </div>
     <hr>
     <div class="list_attribut">
         <h6>prénom</h6>
         <h6>classe</h6>
         <h6>Status</h6>
+        <h6>presence</h6>
     </div>
     <div class="list">
         <ul id="nom">
 
         </ul>
-        <ul id="classe">
+        <ul id="class">
 
         </ul>
-        <ul id="presence">
+        <ul id="status">
 
         </ul>
+        <div class="form-check">
+            <label class="form-check-label" for="eleve" class="espace">Present</label>
+            <input class="form-check-input" type="radio" name="present" id="eleve" value="Present">
+            <label class="form-check-label" for="eleve" class="espace">Absent</label>
+            <input class="form-check-input" type="radio" name="present" id="eleve" value="Absent">
+        </div>
     </div>
 
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
@@ -36,6 +44,6 @@
     <!-- FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
-    <script src="./js/eleve.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
