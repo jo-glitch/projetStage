@@ -97,7 +97,7 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     });
     $('#mercredi_eleve').html(content);
   });
-
+// JEUDI
   firebase.database().ref('/admin/planning/jeudi').on('value', function (snapshot) {
 
     let content = '';
@@ -110,6 +110,7 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     });
     $('#jeudi_eleve').html(content);
   });
+//   VENDREDI
   firebase.database().ref('/admin/planning/vendredi').on('value', function (snapshot) {
 
     let content = '';
@@ -123,7 +124,7 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     $('#vendredi_eleve').html(content);
   });
 
-
+// PREVENIR LE FORMATEUR
   $('#addUserForm').on('submit', onAddUser);
 
 
