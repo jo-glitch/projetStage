@@ -27,17 +27,29 @@ $('#addUserForm').css({
         'justify-content': 'center',
         'align-items': 'center'
     })
-    $('#planning').css({
+    $('#list_attribut_planning_admin, #list_admin_ul').css({
         'display': 'none',
     })
   });
 
   $("#edt").click(function(){
-     $('#planning').css({
-        'display':'flex',
-        'justify-content': 'center',
+      $('#list_attribut_planning_admin').css({
+        'border': '1px solid',
+        'display': 'flex',
+        'justify-content': 'space-around',
         'align-items': 'center'
-      })
+    })
+    $('#list_admin_ul').css({
+        'display': 'flex',
+        'justify-content': 'space-around'
+    })
+    $('#list_admin_ul ul li').css({
+        'list-style-type': 'none'
+    })
+    $('#submit-admin').css({
+        'display' : 'flex',
+        'justify-content': 'center'
+    })
       $('#addUserForm').css({
         'display': 'none',
     })
@@ -63,7 +75,7 @@ function onAddUser (event) {
 
 // PARTIE FORMATEUR
 
-// POUR AFFICHER LE NOM
+// POUR AFF#ICHER LE NOM
 firebase.database().ref('/eleve').on('value', function (snapshot) {
 
     let content = '';
@@ -101,4 +113,102 @@ firebase.database().ref('/eleve').on('value', function (snapshot) {
 
 
 //   PARTIE ADMIN
+$('#list_attribut_planning_admin, #addAdminForm, #submit-admin').css({
+    'display': 'none',
+})
+$( "#list_planning_admin" ).click(function() {
+    $('#list_attribut_planning_admin').css({
+        'border': '1px solid',
+        'display': 'flex',
+        'justify-content': 'space-around',
+        'align-items': 'center'
+    })
+    $('#addAdminForm').css({
+        'display': 'flex',
+        'justify-content': 'space-around'
+    })
+    $('#addAdminForm ul li').css({
+        'list-style-type': 'none'
+    })
+    $('#submit-admin').css({
+        'display' : 'flex',
+        'justify-content': 'center'
+    })
+  });
+  $('#list_eleve_admin').click(function() {
+    $('#list_attribut_planning_admin, #list_admin_ul, #submit-admin').css({
+        'display' : 'none'
+    })
+  });
 
+  $('#addAdminForm').on('submit', onAddPlanning)
+
+  function onAddPlanning(event) {
+    event.preventDefault();
+
+    // LUNDI
+    const lundi_name = $('#lundi_name').val();
+    const lundi_date = $('#lundi_date').val();
+    const lundi_formateur = $('#lundi_formateur').val();
+    const lundi_salle = $('#lundi_salle').val();
+
+    // MARDI
+    const mardi_name = $('#mardi_name').val();
+    const mardi_date = $('#mardi_date').val();
+    const mardi_formateur = $('#mardi_formateur').val();
+    const mardi_salle = $('#mardi_salle').val();
+
+    // MERCREDI
+    const mercredi_name = $('#mercredi_name').val();
+    const mercredi_date = $('#mercredi_date').val();
+    const mercredi_formateur = $('#mercredi_formateur').val();
+    const mercredi_salle = $('#mercredi_salle').val();
+
+    // JEUDI
+
+    const jeudi_name = $('#jeudi_name').val();
+    const jeudi_date = $('#jeudi_date').val();
+    const jeudi_formateur = $('#jeudi_formateur').val();
+    const jeudi_salle = $('#jeudi_salle').val();
+
+    // VENDREDI
+
+    const vendredi_name = $('#vendredi_name').val();
+    const vendredi_date = $('#vendredi_date').val();
+    const vendredi_formateur = $('#vendredi_formateur').val();
+    const vendredi_salle = $('#vendredi_salle').val();
+
+    // Ajouter  dans la database lundi
+    firebase.database().ref('admin/planning/lundi').push({
+        lundi_name,
+        lundi_date,
+        lundi_formateur,
+        lundi_salle
+    });
+    // Ajouter  dans la database mardi
+    firebase.database().ref('admin/planning/mardi').push({
+        mardi_name,
+        mardi_date,
+        mardi_formateur,
+        mardi_salle
+    });
+    // Ajouter  dans la database mercredi
+    firebase.database().ref('admin/planning/mercredi').push({
+        mercredi_name,
+        mercredi_date,
+        mercredi_formateur,
+        mercredi_salle
+    });
+    firebase.database().ref('admin/planning/jeudi').push({
+        jeudi_name,
+        jeudi_date,
+        jeudi_formateur,
+        jeudi_salle
+    });
+    firebase.database().ref('admin/planning/vendredi').push({
+        vendredi_name,
+        vendredi_date,
+        vendredi_formateur,
+        vendredi_salle
+    });
+  }

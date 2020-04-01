@@ -32,14 +32,18 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-#entete button{
-    margin-left: -30px
-}
 #bnttt{
+    /* border: 1px solid;  */
+    padding-left: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 #bnttt button{
-    margin-right: 10px;
+    margin-right: 50px;
+}
+
+/* ADMIN */
+#list_attribut_planning_admin{
+    margin-top: 30px;
 }

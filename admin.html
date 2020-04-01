@@ -5,16 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
-    <title>Liste des élèves</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="head">
-        <h2>ÉLÈVES</h2>
-        <a href="./formulaire.html"><button type="submit" class="btn btn-primary">Ajouter</button></a>
+        <h2>ADMIN</h2>
+        <!-- <a href="./formulaire.html"><button type="submit" class="btn btn-primary">Ajouter</button></a> -->
+        <div id="bnttt">
+            <button type="submit1" id="list_eleve_admin" class="btn btn-primary">ÉLEVES</button>
+            <button type="submit2" id="list_planning_admin" class="btn btn-primary">CREATION DU PLANNING</button>
+        </div>
     </div>
     <hr>
-    <div class="list_attribut">
+
+
+
+
+        <!-- CREATION DU PLANNING -->
+    <!-- <div id="planning"> -->
+        <div id="list_attribut_planning_admin">
+            <h6>Lundi</h6>
+            <h6>Mardi</h6>
+            <h6>Mercredi</h6>
+            <h6>Jeudi</h6>
+            <h6>Vendredi</h6>
+        </div>
+        <form id="addAdminForm">
+                    <div id="lundi">
+                        <label for="nom_cours">Nom du cours lundi</label>
+                        <input type="text" class="form-control" name='nom_cours' id="lundi_name">
+                        <label for="date_cours">Date</label>
+                        <input type="date" class="form-control" name='date_cours' id="lundi_date">
+                        <label for="formateur_cours">Formateur</label>
+                        <input type="text" class="form-control" name="formateur_cours" id="lundi_formateur">
+                        <label for="salle_cours">Salle</label>                            
+                        <input type="text" class="form-control" name="salle_cours" id="lundi_salle">
+                    </div>
+                    <div id="mardi">
+                            <label for="">Nom du cours</label>
+                            <input type="text" class="form-control" name='nom_cours' id="mardi_name">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control" name='date_cours' id="mardi_date">
+                            <label for="">Formateur</label>
+                            <input type="text" class="form-control" name="formateur_cours" id="mardi_formateur">
+                            <label for="">Salle</label>
+                            <input type="text" class="form-control" name="salle_cours" id="mardi_salle">
+                    </div>
+                        <div id="mercredi">
+                            <label for="">Nom du cours</label>
+                            <input type="text" class="form-control" name='nom_cours' id="mercredi_name">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control" name='date_cours' id="mercredi_date">
+                            <label for="">Formateur</label>
+                            <input type="text" class="form-control" name="formateur_cours" id="mercredi_formateur">
+                            <label for="">Salle</label>
+                            <input type="text" class="form-control" name="salle_cours" id="mercredi_salle">
+                        </div>
+                        <div id="jeudi">
+                            <label for="">Nom du cours</label>
+                            <input type="text" class="form-control" name='nom_cours' id="jeudi_name">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control" name='date_cours' id="jeudi_date">
+                            <label for="">Formateur</label>
+                            <input type="text" class="form-control" name="formateur_cours" id="jeudi_formateur">
+                            <label for="">Salle</label>
+                            <input type="text" class="form-control" name="salle_cours" id="jeudi_salle">
+                        </div>
+                        <div id="vendredi">
+                            <label for="">Nom du cours</label>
+                            <input type="text" class="form-control" name='nom_cours' id="vendredi_name">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control" name='date_cours' id="vendredi_date">
+                            <label for="">Formateur</label>
+                            <input type="text" class="form-control" name="formateur_cours" id="vendredi_formateur">
+                            <label for="">Salle</label>
+                            <input type="text" class="form-control" name="salle_cours" id="vendredi_salle">
+                        </div>
+                    <div id="submit-admin">
+                        <button type="submit" class="btn btn-primary">Validez</button>
+                    </div>
+        </form>
+        <!-- <div id="list_admin_ul">
+            
+        </div> -->
+    <!-- </div> -->
+        
+    <!-- <div class="list_attribut">
         <h6>Nom et prénom</h6>
         <h6>Date de naissance</h6>
         <h6>Téléphone</h6>
@@ -58,13 +135,13 @@
             
         </ul>
         
-    </div>
+    </div> -->
 
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
-    <script src="./js/student_list.js" type="module"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
