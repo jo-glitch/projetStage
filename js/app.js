@@ -14,7 +14,7 @@ let firebaseConfig = {
 //  PARTIE ELEVE
 
 // le planning et la partie pour prevenir le formateur son par defaut en display none
-  $('#planning').css({
+  $('#list_admin_ul').css({
     'display': 'none',
 })
 $('#addUserForm').css({
@@ -54,6 +54,76 @@ $('#addUserForm').css({
         'display': 'none',
     })
   })
+
+// PLANNING ELEVE
+// LUNDI
+firebase.database().ref('/admin/planning/lundi').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const lundi = item.val()
+        content += `<li>${lundi.lundi_name}</li>
+                    <li>${lundi.lundi_date}</li>
+                    <li>${lundi.lundi_formateur}</li>
+                    <li>${lundi.lundi_salle}</li>`;
+    });
+    $('#lundi_eleve').html(content);
+  });
+
+// MARDI
+firebase.database().ref('/admin/planning/mardi').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const mardi = item.val()
+        content += `<li>${mardi.mardi_name}</li>
+                    <li>${mardi.mardi_date}</li>
+                    <li>${mardi.mardi_formateur}</li>
+                    <li>${mardi.mardi_salle}</li>`;
+    });
+    $('#mardi_eleve').html(content);
+  });
+//   MERCREDI
+
+firebase.database().ref('/admin/planning/mercredi').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const mercredi = item.val()
+        content += `<li>${mercredi.mercredi_name}</li>
+                    <li>${mercredi.mercredi_date}</li>
+                    <li>${mercredi.mercredi_formateur}</li>
+                    <li>${mercredi.mercredi_salle}</li>`;
+    });
+    $('#mercredi_eleve').html(content);
+  });
+
+  firebase.database().ref('/admin/planning/jeudi').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const jeudi = item.val()
+        content += `<li>${jeudi.jeudi_name}</li>
+                    <li>${jeudi.jeudi_date}</li>
+                    <li>${jeudi.jeudi_formateur}</li>
+                    <li>${jeudi.jeudi_salle}</li>`;
+    });
+    $('#jeudi_eleve').html(content);
+  });
+  firebase.database().ref('/admin/planning/vendredi').on('value', function (snapshot) {
+
+    let content = '';
+    snapshot.forEach(function(item) {
+        const vendredi = item.val()
+        content += `<li>${vendredi.vendredi_name}</li>
+                    <li>${vendredi.vendredi_date}</li>
+                    <li>${vendredi.vendredi_formateur}</li>
+                    <li>${vendredi.vendredi_salle}</li>`;
+    });
+    $('#vendredi_eleve').html(content);
+  });
+
+
   $('#addUserForm').on('submit', onAddUser);
 
 
@@ -75,7 +145,7 @@ function onAddUser (event) {
 
 // PARTIE FORMATEUR
 
-// POUR AFF#ICHER LE NOM
+// POUR AFFICHER LE NOM
 firebase.database().ref('/eleve').on('value', function (snapshot) {
 
     let content = '';
@@ -165,14 +235,12 @@ $( "#list_planning_admin" ).click(function() {
     const mercredi_salle = $('#mercredi_salle').val();
 
     // JEUDI
-
     const jeudi_name = $('#jeudi_name').val();
     const jeudi_date = $('#jeudi_date').val();
     const jeudi_formateur = $('#jeudi_formateur').val();
     const jeudi_salle = $('#jeudi_salle').val();
 
     // VENDREDI
-
     const vendredi_name = $('#vendredi_name').val();
     const vendredi_date = $('#vendredi_date').val();
     const vendredi_formateur = $('#vendredi_formateur').val();
@@ -199,12 +267,14 @@ $( "#list_planning_admin" ).click(function() {
         mercredi_formateur,
         mercredi_salle
     });
+    // Ajouter  dans la database jeudi
     firebase.database().ref('admin/planning/jeudi').push({
         jeudi_name,
         jeudi_date,
         jeudi_formateur,
         jeudi_salle
     });
+    // Ajouter  dans la database vendredi
     firebase.database().ref('admin/planning/vendredi').push({
         vendredi_name,
         vendredi_date,
