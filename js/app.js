@@ -63,9 +63,9 @@ firebase.database().ref('/admin/planning/lundi').on('value', function (snapshot)
     snapshot.forEach(function(item) {
         const lundi = item.val()
         content += `<li>${lundi.lundi_name}</li>
-                    <li>${lundi.lundi_date}</li>
-                    <li>${lundi.lundi_formateur}</li>
-                    <li>${lundi.lundi_salle}</li>`;
+                            <li>${lundi.lundi_date}</li>
+                            <li>${lundi.lundi_formateur}</li>
+                            <li>${lundi.lundi_salle}</li>`;
     });
     $('#lundi_eleve').html(content);
   });
@@ -184,7 +184,7 @@ firebase.database().ref('/eleve').on('value', function (snapshot) {
 
 
 //   PARTIE ADMIN
-$('#list_attribut_planning_admin, #addAdminForm, #submit-admin').css({
+$('#list_attribut_planning_admin, #list_attribut_planning_admin1, #list_admin_ul1, #addAdminForm, #submit-admin').css({
     'display': 'none',
 })
 $( "#list_planning_admin" ).click(function() {
@@ -205,12 +205,38 @@ $( "#list_planning_admin" ).click(function() {
         'display' : 'flex',
         'justify-content': 'center'
     })
-  });
-  $('#list_eleve_admin').click(function() {
-    $('#list_attribut_planning_admin, #list_admin_ul, #submit-admin').css({
+    $('#list_attribut_planning_admin1, #list_admin_ul1, #list_admin_ul ul li').css({
         'display' : 'none'
     })
   });
+  $('#list_planning_admin2').click(function() {
+    $('#list_attribut_planning_admin1').css({
+        'border': '1px solid',
+        'display': 'flex',
+        'justify-content': 'space-around',
+        'align-items': 'center'
+    })
+    $('#list_admin_ul1').css({
+        'display': 'flex',
+        'justify-content': 'space-around'
+    })
+    $('#list_admin_ul ul li').css({
+        'list-style-type': 'none'
+    })
+    $('#list_attribut_planning_admin, #addAdminForm, #list_admin_ul, #submit-admin').css({
+        'display' : 'none'
+    })
+  });
+//   suppression du planning
+  $('#suppression').click(function(){
+    firebase.database().ref('/admin').on('value', function (snapshot) {
+        snapshot.collection("/admin").doc("/planning").delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+    });
+  })
 
   $('#addAdminForm').on('submit', onAddPlanning)
 
