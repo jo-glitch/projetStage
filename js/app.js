@@ -11,6 +11,90 @@ let firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 
+  let Adm = document.getElementById("adm");
+  let Prof = document.getElementById("prof");
+  let elev = document.getElementById("elev");
+ 
+ 
+// fuction display none de mes div 
+$( "#btn2" ).click(function() {
+    
+    $('#ins').css({
+        'display': 'flex',
+    })
+$('#conect').css({
+        'display': 'none',
+    })
+});
+  $("#inscrit").click(function(){
+      $('#conect').css({
+          'display':'flex'
+      })
+$('#ins').css({
+        'display':'none'
+    })
+})
+// apelle a la fonction create user
+$('#loginForm').on('submit', emailPasswordLogin);
+// Create user with email and pass.
+function emailPasswordLogin(event) {
+    event.preventDefault();
+    const email = $('#emailField').val();
+    const password = $('#passwordField').val();
+  const connect =  firebase.auth().createUserWithEmailAndPassword(email, password).catch(event => {
+        
+       
+    })
+}
+//  apelle a la fonction logging quand l'user est connecter 
+$('#loginForm1').on('submit',loging);
+// verification du mail et password pour loging un user
+function loging(event) {
+    event.preventDefault();
+    const email = $('#emailField1').val();
+   
+    const password = $('#passwordField1').val();
+    // Votre code ici ...
+    firebase.auth().signInWithEmailAndPassword(email, password)
+.then(function (result) {
+        console.log('Succès de connexion', result);
+       
+            
+              if (Adm.checked == true){
+                    document.location.href="admin.html"
+                } else if (Prof.checked == true) {
+            document.location.href="prof.html"
+            $('#results').html(
+                '<h1>Bienvenue à vous Chere prof </h1>'
+        );
+        }else if (elev.checked==true) {
+            document.location.href="eleve.html"
+            $('#results').html(
+'<h1>Bienvenue à vous chere eleve </h1>'
+            );
+        }else{
+          alert('tu na rien remplis')
+}    
+})
+.catch(function (error) {
+       
+       
+    });
+}
+  // Initialisation des gestionnaires d'événement
+  $('#addUserForm').on('submit', onAddUser);
+  function onAddUser (event) {
+      event.preventDefault();
+  
+      const name = $('#emailField').val();
+      // Ajouter  dans la database ...
+      firebase.database().ref('User/').push({
+          name,
+          
+      });
+  }
+
+
 //  PARTIE ELEVE
 
 // le planning et la partie pour prevenir le formateur son par defaut en display none
