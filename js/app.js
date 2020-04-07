@@ -61,14 +61,14 @@ function loging(event) {
        
             
               if (Adm.checked == true){
-                    document.location.href="admin.html"
+                    document.location.href="./admin.html"
                 } else if (Prof.checked == true) {
-            document.location.href="prof.html"
+            document.location.href="./prof.html"
             $('#results').html(
                 '<h1>Bienvenue à vous Chere prof </h1>'
         );
         }else if (elev.checked==true) {
-            document.location.href="eleve.html"
+            document.location.href="./eleve.html"
             $('#results').html(
 '<h1>Bienvenue à vous chere eleve </h1>'
             );
