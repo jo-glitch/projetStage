@@ -290,9 +290,6 @@ $( "#list_planning_admin" ).click(function() {
         'display': 'flex',
         'justify-content': 'space-around'
     })
-    $('#list_admin_ul1 ul li').css({
-        'list-style-type': 'none'
-    })
     $('#submit-admin').css({
         'display' : 'flex',
         'justify-content': 'center'
@@ -312,7 +309,7 @@ $( "#list_planning_admin" ).click(function() {
         'display': 'flex',
         'justify-content': 'space-around'
     })
-    $('#list_admin_ul ul li').css({
+    $('#list_admin_ul1 ul li').css({
         'list-style-type': 'none'
     })
     $('#list_attribut_planning_admin, #addAdminForm, #list_admin_ul, #submit-admin').css({
