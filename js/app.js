@@ -15,7 +15,10 @@ let firebaseConfig = {
   let Prof = document.getElementById("prof");
   let elev = document.getElementById("elev");
  
- 
+
+$("#conect").css({
+    'display' : 'none'
+})
 // fuction display none de mes div 
 $( "#btn2" ).click(function() {
     
@@ -317,15 +320,17 @@ $( "#list_planning_admin" ).click(function() {
     })
   });
 //   suppression du planning
-  $('#suppression').click(function(){
-    firebase.database().ref('/admin').on('value', function (snapshot) {
-        snapshot.collection("/admin").doc("/planning").delete().then(function() {
-            console.log("Document successfully deleted!");
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
-        });
-    });
-  })
+//   $('#suppression').click(function(){
+//     firebase.database().ref('/admin').on('value', function (snapshot) {
+//         snapshot.collection("/admin").doc("/planning").delete().then(function() {
+//             console.log("Document successfully deleted!");
+//         }).catch(function(error) {
+//             console.error("Error removing document: ", error);
+//         });
+//     });
+//   })
+
+$("#suppresion").remove("#list_admin_ul1")
 
   $('#addAdminForm').on('submit', onAddPlanning)
 
