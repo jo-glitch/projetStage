@@ -149,10 +149,12 @@ firebase.database().ref('/admin/planning/lundi').on('value', function (snapshot)
     let content = '';
     snapshot.forEach(function(item) {
         const lundi = item.val()
-        content += `<li>${lundi.lundi_name}</li>
-                    <li>${lundi.lundi_date}</li>
-                    <li>${lundi.lundi_formateur}</li>
-                    <li>${lundi.lundi_salle}</li>
+        content += `<ul>
+                        <li>${lundi.lundi_name}</li>
+                        <li>${lundi.lundi_date}</li>
+                        <li>${lundi.lundi_formateur}</li>
+                        <li>${lundi.lundi_salle}</li>
+                    </ul>
                     <hr>`;
     });
     $('#lundi_eleve').html(content);
@@ -164,10 +166,12 @@ firebase.database().ref('/admin/planning/mardi').on('value', function (snapshot)
     let content = '';
     snapshot.forEach(function(item) {
         const mardi = item.val()
-        content += `<li>${mardi.mardi_name}</li>
-                    <li>${mardi.mardi_date}</li>
-                    <li>${mardi.mardi_formateur}</li>
-                    <li>${mardi.mardi_salle}</li>
+        content += `<ul>
+                        <li>${mardi.mardi_name}</li>
+                        <li>${mardi.mardi_date}</li>
+                        <li>${mardi.mardi_formateur}</li>
+                        <li>${mardi.mardi_salle}</li>
+                    </ul>
                     <hr>`;
     });
     $('#mardi_eleve').html(content);
@@ -179,10 +183,12 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     let content = '';
     snapshot.forEach(function(item) {
         const mercredi = item.val()
-        content += `<li>${mercredi.mercredi_name}</li>
-                    <li>${mercredi.mercredi_date}</li>
-                    <li>${mercredi.mercredi_formateur}</li>
-                    <li>${mercredi.mercredi_salle}</li>
+        content += `<ul>
+                        <li>${mercredi.mercredi_name}</li>
+                        <li>${mercredi.mercredi_date}</li>
+                        <li>${mercredi.mercredi_formateur}</li>
+                        <li>${mercredi.mercredi_salle}</li>
+                    </ul>
                     <hr>`;
     });
     $('#mercredi_eleve').html(content);
@@ -193,10 +199,12 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     let content = '';
     snapshot.forEach(function(item) {
         const jeudi = item.val()
-        content += `<li>${jeudi.jeudi_name}</li>
-                    <li>${jeudi.jeudi_date}</li>
-                    <li>${jeudi.jeudi_formateur}</li>
-                    <li>${jeudi.jeudi_salle}</li>
+        content += `<ul>
+                        <li>${jeudi.jeudi_name}</li>
+                        <li>${jeudi.jeudi_date}</li>
+                        <li>${jeudi.jeudi_formateur}</li>
+                        <li>${jeudi.jeudi_salle}</li>
+                    </ul>
                     <hr>`;
     });
     $('#jeudi_eleve').html(content);
@@ -207,10 +215,12 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     let content = '';
     snapshot.forEach(function(item) {
         const vendredi = item.val()
-        content += `<li>${vendredi.vendredi_name}</li>
-                    <li>${vendredi.vendredi_date}</li>
-                    <li>${vendredi.vendredi_formateur}</li>
-                    <li>${vendredi.vendredi_salle}</li>
+        content += `<ul>
+                        <li>${vendredi.vendredi_name}</li>
+                        <li>${vendredi.vendredi_date}</li>
+                        <li>${vendredi.vendredi_formateur}</li>
+                        <li>${vendredi.vendredi_salle}</li>
+                    </ul>
                     <hr>`;
     });
     $('#vendredi_eleve').html(content);

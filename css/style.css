@@ -48,7 +48,9 @@ body{
 #list_attribut_planning_admin{
     margin-top: 30px;
 }
-#list_admin_ul1 ul {
+#list_admin_ul1 #lundi_eleve, #list_admin_ul1 #mardi_eleve, 
+#list_admin_ul1 #mercredi_eleve, #list_admin_ul1 #jeudi_eleve,
+#list_admin_ul1 #vendredi_eleve{
     padding-right: 90px;
     border-right: 1px solid;
 }
