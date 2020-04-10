@@ -290,7 +290,7 @@ $( "#list_planning_admin" ).click(function() {
         'display': 'flex',
         'justify-content': 'space-around'
     })
-    $('#addAdminForm ul li').css({
+    $('#list_admin_ul1 ul li').css({
         'list-style-type': 'none'
     })
     $('#submit-admin').css({

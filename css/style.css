@@ -25,6 +25,7 @@ body{
 }
 .list ul li{
     list-style-type: none;
+
 }
 /* ELEVE */
 #entete{
@@ -46,4 +47,8 @@ body{
 /* ADMIN */
 #list_attribut_planning_admin{
     margin-top: 30px;
+}
+#list_admin_ul1 ul {
+    padding-right: 90px;
+    border-right: 1px solid;
 }
