@@ -147,9 +147,10 @@ firebase.database().ref('/admin/planning/lundi').on('value', function (snapshot)
     snapshot.forEach(function(item) {
         const lundi = item.val()
         content += `<li>${lundi.lundi_name}</li>
-                            <li>${lundi.lundi_date}</li>
-                            <li>${lundi.lundi_formateur}</li>
-                            <li>${lundi.lundi_salle}</li>`;
+                    <li>${lundi.lundi_date}</li>
+                    <li>${lundi.lundi_formateur}</li>
+                    <li>${lundi.lundi_salle}</li>
+                    <hr>`;
     });
     $('#lundi_eleve').html(content);
   });
@@ -163,7 +164,8 @@ firebase.database().ref('/admin/planning/mardi').on('value', function (snapshot)
         content += `<li>${mardi.mardi_name}</li>
                     <li>${mardi.mardi_date}</li>
                     <li>${mardi.mardi_formateur}</li>
-                    <li>${mardi.mardi_salle}</li>`;
+                    <li>${mardi.mardi_salle}</li>
+                    <hr>`;
     });
     $('#mardi_eleve').html(content);
   });
@@ -177,7 +179,8 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
         content += `<li>${mercredi.mercredi_name}</li>
                     <li>${mercredi.mercredi_date}</li>
                     <li>${mercredi.mercredi_formateur}</li>
-                    <li>${mercredi.mercredi_salle}</li>`;
+                    <li>${mercredi.mercredi_salle}</li>
+                    <hr>`;
     });
     $('#mercredi_eleve').html(content);
   });
@@ -190,7 +193,8 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
         content += `<li>${jeudi.jeudi_name}</li>
                     <li>${jeudi.jeudi_date}</li>
                     <li>${jeudi.jeudi_formateur}</li>
-                    <li>${jeudi.jeudi_salle}</li>`;
+                    <li>${jeudi.jeudi_salle}</li>
+                    <hr>`;
     });
     $('#jeudi_eleve').html(content);
   });
@@ -203,7 +207,8 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
         content += `<li>${vendredi.vendredi_name}</li>
                     <li>${vendredi.vendredi_date}</li>
                     <li>${vendredi.vendredi_formateur}</li>
-                    <li>${vendredi.vendredi_salle}</li>`;
+                    <li>${vendredi.vendredi_salle}</li>
+                    <hr>`;
     });
     $('#vendredi_eleve').html(content);
   });
