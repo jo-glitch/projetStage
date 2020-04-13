@@ -410,3 +410,17 @@ $("#suppresion").remove("#list_admin_ul1")
         vendredi_salle
     });
   }
+// LOGOUT
+
+$('#logout').on('submit',logout);
+  function logout (event) {
+    event.preventDefault();
+    
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        console.log('reussis');
+        document.location.href="./index.html"
+      }).catch(function(error) {
+        // An error happened.
+      });
+    }
