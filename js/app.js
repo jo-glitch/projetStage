@@ -411,8 +411,7 @@ $("#suppresion").remove("#list_admin_ul1")
     });
   }
 // LOGOUT
-
-$('#logout').on('submit',logout);
+$('#logoute').on('submit',logout);
   function logout (event) {
     event.preventDefault();
     
