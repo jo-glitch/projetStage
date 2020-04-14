@@ -4,7 +4,9 @@ Bonjour monsieur,
 
 Vous pouvez lancer sois en cliquant sur le fichier HTML ou lancer live-server
 
-Rajout du formulaire d'inscription, en fonction de qu'elle radio est selectionnée vous apparaîtrez sur une page différentes
+Formulaire d'inscription, en fonction de qu'elle radio est selectionnée vous apparaîtrez sur une page différentes
+
+Logout fini, une foit déconnecter nous sommes rédiriger vers le formulaire d'inscription
 
 Actuellement l'Éleve peut voir son emploi du temps et envoié à son formateur si il va avoir du retard ou si il est absent. L'admin Peut quand a lui crée l'emploi du temps et l'élève le récupere (à faire crée la liste de classe). Le formateur lui recevera l'avertissement de ses élèves si ils sont en retard ou absent et pourra faire l'appel.
 
