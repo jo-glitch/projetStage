@@ -1,4 +1,4 @@
-let firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCF4gH1dahG_J1P2Iwa_B6uJ9CUJfGDanM",
     authDomain: "projetappli-8b839.firebaseapp.com",
     databaseURL: "https://projetappli-8b839.firebaseio.com",
@@ -8,7 +8,6 @@ let firebaseConfig = {
     appId: "1:103484594399:web:36a524a1c3094c14e3f16a",
     measurementId: "G-YJK8MTJPHZ"
   };
-
   firebase.initializeApp(firebaseConfig);
 
   let Adm = document.getElementById("adm");
@@ -410,16 +409,47 @@ $("#suppresion").remove("#list_admin_ul1")
         vendredi_salle
     });
   }
-// LOGOUT
-$('#logoute').on('submit',logout);
-  function logout (event) {
-    event.preventDefault();
+
+
+  const logout = document.querySelector('#logout');
+  logout.addEventListener('click',(e)=>{
+    e.preventDefault()
+    firebase.auth().signOut()
+    .then(function() {
+      // Sign-out successful.
+      console.log("eureka")
+    })
+    .catch(function(error) {
+      // An error happened
+    });
+  })
+
+// $('#suppression').on('submit3', supp );
+// function supp(){
+//     let dB =  firebase.database();
+//   let dbRef = dB.ref('admin');
+//     dbRef.once('value', snapshot=>{
+//         snapshot.forEach(dp =>{
+//           let key = dp.key;
+//           dB.ref('admin/' + key + '/planning').set(null);
+//       })
+// })
+// }
+
+
+
+
+
+// // LOGOUT
+// $('#logoute').on('submit',logout);
+//   function logout (event) {
+//     event.preventDefault();
     
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-        console.log('reussis');
-        document.location.href="./index.html"
-      }).catch(function(error) {
-        // An error happened.
-      });
-    }
+//     firebase.auth().signOut().then(function() {
+//         // Sign-out successful.
+//         console.log('reussis');
+//         document.location.href="./index.html"
+//       }).catch(function(error) {
+//         // An error happened.
+//       });
+// }
