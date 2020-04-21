@@ -206,3 +206,32 @@ firebase.database().ref('/admin/planning/mercredi').on('value', function (snapsh
     });
     $('#vendredi_eleve').html(content);
   });
+
+
+//    Partie suppression
+
+$("suppression").on('submit', supp);
+
+function supp(event){
+
+    firebase.database().ref('/admin/planning/lundi').on('value', function (snapshot) {
+    let content = '';
+    snapshot.forEach(function(item) {
+      content -= `<ul>
+                      <li>${lundi.lundi_name}</li>
+                      <li>${lundi.lundi_date}</li>
+                      <li>${lundi.lundi_formateur}</li>
+                      <li>${lundi.lundi_salle}</li>
+                  </ul>
+                  <hr>`;
+    });
+    $('#lundi_eleve').html(content);
+});
+
+    // event.preventDefault();
+    // db.collection('admin/planning').doc('/lundi').delete().then(function() {
+    //     console.log("Document successfully deleted!");
+    // }).catch(function(error) {
+    //     console.error("Error removing document: ", error);
+    // });
+}
